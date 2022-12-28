@@ -1,0 +1,121 @@
+#root {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.App {
+  position: relative;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header button {
+  width: 80px;
+  height: 35px;
+  color: #000;
+  background-color: darkgray;
+  margin-right: 8px;
+}
+
+.header h1 {
+  margin: 0 0 0 16px;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  position: relative;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  margin: 8px;
+  padding: 8px;
+}
+
+.img {
+  position: relative;
+  background-color: darkgrey;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.img:after {
+  top: 0;
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.right {
+  position: relative;
+}
+
+.cart {
+  position: absolute;
+  width: 240px;
+  padding: 8px;
+  box-shadow: inset#ccc;
+  background-color: #fff;
+  right: 0;
+  z-index: 1;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width:300px){
+  .item{
+      width:100vw;
+  }
+}
+
+@media (min-width:425px){
+  .item{
+      width:50vw;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .item{
+      width: calc(100vh / 3);
+  }
+}
+
+@media screen and (min-width:1024px) and (max-width:1549px){
+  .item{
+      width:25vw;
+  }            
+}
+
+@media (min-width:1550px){
+  .item{
+      width:12.5vw;
+  }
+}
