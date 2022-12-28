@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react'
 import './App.css'
 
-function mock () {
+function mock() {
   const len = Math.floor(Math.random() * 20)
   return new Array(len).fill({
     name: '商品',
@@ -41,7 +41,7 @@ function App() {
       newItem.count = 1
       setItems([...items, newItem])
     }
-    
+
   }, [items])
 
   const remove = useCallback((item: IItem) => {
@@ -64,13 +64,13 @@ function App() {
           <button onMouseEnter={show}>购物车</button>
           {showCart && (<div className='cart'>
             {items?.map?.((item) => (
-            <div className='cart-item' key={item.name}>
-              <div>{item.name}</div>
-              <div>
-                {item.price} * {item.count}
-                <button onClick={() => remove(item)}>删除</button>
-              </div>
-            </div>))}
+              <div className='cart-item' key={item.name}>
+                <div>{item.name}</div>
+                <div>
+                  {item.price} * {item.count}
+                  <button onClick={() => remove(item)}>删除</button>
+                </div>
+              </div>))}
             {showTotal && <div>{total}</div>}
             <button onClick={sum}>购买</button>
           </div>)}
