@@ -18,4 +18,4 @@ $ pnpm dev
 ### build
 ```shell
 $ pnpm build
-```# some-demos
+```
