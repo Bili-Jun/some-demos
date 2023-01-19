@@ -1,5 +1,5 @@
-# koa-ts-template2
-A typescript template of koa2.
+# shopping-cart-demo
+购物车
 
 ## Usage
 
