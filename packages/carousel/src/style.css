@@ -1,0 +1,152 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #f2b34f;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  max-width: 1580px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+ul.items-wrapper {
+  position: relative;
+  width: 8%;
+  white-space: nowrap;
+  padding: 10px 0 30px 0;
+  transition: transform .4s cubic-bezier(.42,.65,.27,.99);
+  user-select: none;
+}
+
+li.item {
+  position: relative;
+  display: inline-block;
+  width: 112px;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: all .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);;
+}
+
+img.item-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  vertical-align: top;
+  z-index: 1;
+  -webkit-user-drag: none;
+}
+
+img.item-bg-img {
+  width: 100%;
+  position: absolute;
+  top: 12px;
+  transition: transform 0.8s;
+  -webkit-user-drag: none;
+}
+
+li.item:hover img.item-bg-img {
+  transform: scale(1.65);
+  animation: itemBgAnimation 1.5s ease-in-out infinite alternate;
+  animation-delay: 1.3s;
+}
+
+li.item.active {
+  transform: scale(1.2);
+  margin: 0 25px;
+}
+
+li.item.active  img.item-bg-img {
+  transform: scale(1.65);
+  transition: inherit;
+}
+
+li.item.active:hover img.item-bg-img {
+  animation: inherit;
+}
+
+li.item:first-child {
+  margin-left: 0;
+}
+
+.carousel-content {
+  padding: 0 42px;
+}
+
+.carousel-content.hidden {
+  overflow: hidden;
+}
+
+.carousel-content.mask-right{
+  -webkit-mask-image: linear-gradient(90deg,#000 89.5%,transparent 1538px);
+  -webkit-mask-size: 105% 100%;
+  -webkit-mask-position: left top;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: linear-gradient(90deg,#000 89.5%,transparent 1538px);
+  mask-size: 105% 100%;
+  mask-position: left top;
+  mask-repeat: no-repeat;
+  transition: all .8s cubic-bezier(.42,.65,.27,.99);
+}
+
+.carousel-container.mask-left {
+  -webkit-mask-image: linear-gradient(90deg,transparent 3.2%,#000 8%);
+  -webkit-mask-size: 105% 100%;
+  -webkit-mask-position: top right;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: linear-gradient(90deg,transparent 3.2%,#000 8%);
+  mask-size: 105% 100%;
+  mask-position: top right;
+  mask-repeat: no-repeat;
+  transition: all .8s cubic-bezier(.42,.65,.27,.99);
+}
+
+.carousel-content.mask-right.active {
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.carousel-container.mask-left.active {
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+@keyframes itemBgAnimation {
+  0% {
+    transform: scale(1.65);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
